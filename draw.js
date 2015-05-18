@@ -66,9 +66,19 @@ var Draw = (function() {
          * Draws the point list
          */
         render: function() {
-            currentPoints.forEach(function(point) {
-                context.fillRect(point.x, point.y, 2, 2);
-            });
+            context.fillStyle = 'black';
+            currentPoints.forEach(this.drawPoint);
         },
+
+        /**
+         * Draws a single point
+         */
+        drawPoint: function(point, color) {
+            if(color) {
+                context.fillStyle = color;
+            }
+
+            context.fillRect(point.x, point.y, 2, 2);
+        }
     };
 })();
