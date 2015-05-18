@@ -27,6 +27,12 @@ var Draw = (function() {
          */
         resetPoints: function() {
             currentPoints = [];
+            
+            // Trigger the event listener, if it exists
+            if (this.onpointschanged) {
+                this.onpointschanged(currentPoints);
+            }
+
             context.clearRect(0, 0, 1000, 1000);
             this.render();
         },
@@ -51,6 +57,11 @@ var Draw = (function() {
                 x: event.pageX - canvas.offsetLeft,
                 y: event.pageY - canvas.offsetTop
             });
+
+            // Trigger the event listener, if it exists
+            if (this.onpointschanged) {
+                this.onpointschanged(currentPoints);
+            }
 
             this.render();
         },
@@ -79,6 +90,11 @@ var Draw = (function() {
             }
 
             context.fillRect(point.x, point.y, 2, 2);
-        }
+        },
+
+        /**
+         * An hookin for an event listener
+         */
+        onpointschanged: null
     };
 })();
