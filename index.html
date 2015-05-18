@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ellipse</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
+        <style>
+            body {
+                max-width: 1024;
+                width: 95%;
+                margin: 0;
+                padding: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .centered {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="centered">
+            <canvas id="canvas" width="800" height="600"></canvas>
+        </div>
+        <div class="centered">
+            <label>Radius <input type="range" id="radius" min="10" max="1000" value="10" /> <span id="radius-value">10</span></label>
+        </div>
+        <div class="centered">
+            <button id="clear">Clear</button>
+        </div>
+    </body>
+</html>
