@@ -53,6 +53,7 @@ var Draw = (function() {
                 return;
             }
 
+            this.clear();
             currentPoints.push({
                 x: event.pageX - canvas.offsetLeft,
                 y: event.pageY - canvas.offsetTop
@@ -90,6 +91,13 @@ var Draw = (function() {
             }
 
             context.fillRect(point.x, point.y, 2, 2);
+        },
+
+        /**
+         * A method to clear the canvas
+         */
+        clear: function() {
+            context.clearRect(0, 0, 1000, 1000);
         },
 
         /**
