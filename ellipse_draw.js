@@ -2,11 +2,11 @@ var EllipseDraw = (function() {
 
     return {
         init: function() {
-            Draw.onpointschanged = this.onPointsChanged;
+            Draw.onpointschanged = this.redrawEllipse;
         },
 
-        onPointsChanged: function(points) {
-            console.log('CHANGED'); 
+        redrawEllipse: function(points) {
+        
         },
     }
 })();
