@@ -3,7 +3,7 @@ var Ellipse = (function() {
         /**
          * How close a point must be to the edge to be considered the edge
          */
-        edgeTolerance: 1,
+        edgeTolerance: 3,
 
         /**
          * Determines the euclidean distance between two points
