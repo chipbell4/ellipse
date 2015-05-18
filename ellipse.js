@@ -22,7 +22,7 @@ var Ellipse = (function() {
         pointOnEdge: function(point, foci, radius) {
             var that = this;
             var totalDistance = foci.reduce(function(totalDistance, currentFocus) {
-                return totalDistance + distanceBetweenPoints(point, currentFocus);
+                return totalDistance + that.distanceBetweenPoints(point, currentFocus);
             }, 0);
 
             return Math.abs(radius - totalDistance) < this.edgeTolerance;
