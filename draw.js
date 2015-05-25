@@ -25,8 +25,8 @@ var Draw = (function() {
         /**
          * Clears the current point list and redraws
          */
-        resetPoints: function() {
-            currentPoints = [];
+        resetPoints: function(points) {
+            currentPoints = points || [];
             
             // Trigger the event listener, if it exists
             if (this.onpointschanged) {

@@ -32,12 +32,18 @@
         <script src="draw.js"></script>
         <script src="ellipse.js"></script>
         <script src="ellipse_draw.js"></script>
+        <script src="preset.js"></script>
         <script src="render.js"></script>
         <script>
             Radius.init();
             Draw.init();
             EllipseDraw.init();
             Render.init();
+
+            var x = function(t) { return 400 + 100 * t; };
+            var y = function(t) { return 300; };
+            var preset = Preset.buildPreset(x, y, 50);
+            Preset.loadPreset(preset);
         </script>
     </body>
 </html>
