@@ -10,9 +10,13 @@ var EllipseDraw = (function() {
             currentPoints = points;
         },
 
+        fociCount: function() {
+            return currentPoints.length;
+        },
+
         render: function() {
-            // calculate points on the ellipse
-            var edgePoints = Ellipse.edgePointsOfEllipse(currentPoints, Radius.currentValue());
+            // calculate points on the ellipse, relative to the number of points
+            var edgePoints = Ellipse.edgePointsOfEllipse(currentPoints, Radius.currentValue() * this.fociCount());
 
             // now draw them
             var drawBlue = function(point) { Draw.drawPoint(point, 'blue'); };

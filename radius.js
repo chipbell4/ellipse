@@ -29,7 +29,7 @@ var Radius = (function() {
          * Callback for when the label is updated
          */
         updateLabel: function() {
-            label.innerHTML = slider.value;
+            label.innerHTML = (Number(slider.value) * EllipseDraw.fociCount()).toPrecision(4);
         } 
     };
 })();
