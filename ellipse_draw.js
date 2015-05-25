@@ -8,6 +8,7 @@ var EllipseDraw = (function() {
 
         pointsChanged: function(points) {
             currentPoints = points;
+            console.log(currentPoints.length);
         },
 
         fociCount: function() {

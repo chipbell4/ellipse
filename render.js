@@ -1,8 +1,8 @@
 var Render = (function() {
     return {
         init: function() {
-            Draw.onpointschanged = this.pointsChanged.bind(this);
-            document.getElementById('radius').addEventListener('input', this.redraw.bind(this));
+            Draw.onpointschanged = _.debounce(this.pointsChanged.bind(this), 10);
+            document.getElementById('radius').addEventListener('input', _.debounce(this.redraw.bind(this), 10));
         },
 
         pointsChanged: function(points) {
