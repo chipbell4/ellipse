@@ -20,6 +20,10 @@ var Ellipse = (function() {
          * radius
          */
         pointOnEdge: function(point, foci, radius) {
+            if(foci.length === 0) {
+                return false;
+            }
+
             var that = this;
             var totalDistance = foci.reduce(function(totalDistance, currentFocus) {
                 return totalDistance + that.distanceBetweenPoints(point, currentFocus);
