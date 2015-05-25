@@ -4,13 +4,11 @@ var EllipseDraw = (function() {
 
     return {
         init: function() {
-            Draw.onpointschanged = this.pointsChanged.bind(this);
-            document.getElementById('radius').oninput = this.render.bind(this);
         },
 
         pointsChanged: function(points) {
             currentPoints = points;
-            this.render();
+            console.log(currentPoints.length);
         },
 
         render: function() {
