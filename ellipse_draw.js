@@ -5,15 +5,15 @@ var EllipseDraw = (function() {
     return {
         init: function() {
             Draw.onpointschanged = this.pointsChanged.bind(this);
-            document.getElementById('radius').oninput = this.redrawEllipse.bind(this);
+            document.getElementById('radius').oninput = this.render.bind(this);
         },
 
         pointsChanged: function(points) {
             currentPoints = points;
-            this.redrawEllipse();
+            this.render();
         },
 
-        redrawEllipse: function() {
+        render: function() {
             // calculate points on the ellipse
             var edgePoints = Ellipse.edgePointsOfEllipse(currentPoints, Radius.currentValue());
 
