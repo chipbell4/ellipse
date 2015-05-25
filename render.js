@@ -2,7 +2,7 @@ var Render = (function() {
     return {
         init: function() {
             Draw.onpointschanged = this.pointsChanged.bind(this);
-            document.getElementById('radius').oninput = this.redraw.bind(this);
+            document.getElementById('radius').addEventListener('input', this.redraw.bind(this));
         },
 
         pointsChanged: function(points) {

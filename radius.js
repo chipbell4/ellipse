@@ -8,7 +8,7 @@ var Radius = (function() {
         init: function() {
             slider = document.getElementById('radius');
             label = document.getElementById('radius-value');
-            slider.oninput = this.updateLabel;
+            slider.addEventListener('input', this.updateLabel);
         },
 
         /**
