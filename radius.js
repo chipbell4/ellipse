@@ -19,6 +19,13 @@ var Radius = (function() {
         },
 
         /**
+         * Sets the current value of the radius slider
+         */
+        setValue: function(newValue) {
+            return slider.value = newValue;
+        },
+
+        /**
          * Callback for when the label is updated
          */
         updateLabel: function() {
