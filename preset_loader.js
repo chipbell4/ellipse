@@ -10,7 +10,7 @@ var PresetLoader = (function() {
     // "sine" preset
     x = function(t) { return 400 + 200 * t; };
     y = function(t) { return 300 + 50 * Math.sin(t / (2 * Math.PI) * 40); };
-    presets.sine = Preset.buildPreset(x, y, 200);
+    presets.sine = Preset.buildPreset(x, y, 120);
 
     // "circle" preset
     x = function(t) { return 300 + 200 * Math.sin(t * 2 * Math.PI); };
