@@ -19,7 +19,10 @@ var Draw = (function() {
             canvas.onmouseup = this.mouseUp;
             canvas.onmouseout = this.mouseUp;
 
-            clearButton.onclick = this.resetPoints.bind(this);
+            var that = this;
+            clearButton.onclick = function() {
+                that.resetPoints();
+            }
         },
 
         /**
