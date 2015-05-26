@@ -19,7 +19,25 @@ var PresetLoader = (function() {
 
     return {
         init: function() {
-            Preset.loadPreset(presets.circle);
-        }
+            // bind presets
+            var selector = document.getElementById('preset-selector'); 
+
+            for(var presetName in presets) {
+                var option = document.createElement('option');
+                option.innerHTML = presetName;
+                option.value = presetName;
+                selector.appendChild(option);
+            }
+
+            // when the selector changes, load a preset
+            selector.addEventListener('change', this.presetSelected);
+
+            Preset.loadPreset(presets.line);
+        },
+
+        presetSelected: function(event) {
+            var presetName = event.target.value;
+            Preset.loadPreset(presets[presetName]);
+        },
     };
 })();
